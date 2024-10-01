@@ -54,7 +54,7 @@ The following features were implemented to meet the requirements of the technica
 
 Here is a simple architecture overview of the API:
 
-![Architecture model](./docs/Arquitectura gral.drawio.png)
+![Architecture model](docs/Arquitectura gral.drawio.png)
 
 - **Controller:** Handles the HTTP requests.
 - **Service:** Contains the business logic, such as filtering out duplicate items.
