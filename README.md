@@ -12,7 +12,7 @@ This API has been developed as part of a technical test, focusing on handling PO
 - **Postman**: For testing API requests
 - **Lombok**: For cleaner code by auto-generating getters, setters, constructors, etc.
 
-> ## Project Requirements
+> ## Problem Statement - Project Requirements
 
 Please create a Spring Boot REST controller with the following requirements:
 
