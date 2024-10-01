@@ -102,23 +102,27 @@ This endpoint allows adding a list of items. If the list is empty or null, or if
 
 ### Run the API endpoint
 Run the Spring Boot Application endpoint
+
 ![Spring run](/docs/Execute_TechTest2.jpg "Spring run")
 
 ### 1. Handling adding null items
 Using Postman, if you try to add null items, you will receive a `400 - Bad Request` response:
+
 ![result 1](/docs/Result1_TechTest2.jpg "result 1")
 
 ### 2. Adding new items successfully
 You can also send a request like the following to add new items, you will receive a `200 - OK` response:
+
 ![result 2](/docs/Result2_TechTest2.jpg "result 2")
 
 ### 3. Handling item conflicts
 If you try to add items with existing IDs, you will receive a `409 - Conflict` response:
+
 ![result 3](/docs/Result3_TechTest2.jpg "result 3")
 
 > ## Author
 
 This project was developed as part of a technical test by:
-- **PEDRO MAYORGA** - Initial work - _UnknownMasterCoder_
+- **PEDRO MAYORGA** _(UnknownMasterCoder)_ - _Initial work_
 - [LinkedIn](https://linkedin.com/in/PedroMayorga)
 - [GitHub](https://github.com/UnknownMasterCoder)
