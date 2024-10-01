@@ -12,7 +12,7 @@ This API has been developed as part of a technical test, focusing on handling PO
 - **Postman**: For testing API requests
 - **Lombok**: For cleaner code by auto-generating getters, setters, constructors, etc.
 
-## Project Requirements
+> ## Project Requirements
 
 Please create a Spring Boot REST controller with the following requirements:
 
@@ -31,17 +31,17 @@ The following features were implemented to meet the requirements of the technica
    
 3. **Database Simulation**: The API simulates a database using a `Set<Long>` to keep track of item IDs. This ensures that item IDs are unique, avoiding duplication.
 
-## Prerequisites
+> ## Prerequisites
 
 - **Java 17** or higher.
 - **Gradle** installed.
 
-## How to Run the API
+> ## How to Run the API
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/UnknownMasterCoder/ItemsAPI-TechTest2-GlowTouch.git
    cd your-repo
    
 2. Build and run the application:
@@ -50,7 +50,7 @@ The following features were implemented to meet the requirements of the technica
    
 3. The API will be available at `http://localhost:8080/items`
 
-## Architecture Overview
+> ## Architecture Overview
 
 Here is a simple architecture overview of the API:
 
@@ -60,11 +60,11 @@ Here is a simple architecture overview of the API:
 - **Service:** Contains the business logic, such as filtering out duplicate items.
 - **Database:** Simulated in-memory storage using a Set<Long> to prevent duplicate IDs.
 
-## Database Implementation
+> ## Database Implementation
 
 Instead of using a real database, the API stores the item IDs in an in-memory set `(Set<Long>)`. Each time the `/items` endpoint is called, the service checks whether the item ID already exists in this set. If it does, that item is skipped, and a `409 Conflict` response is returned.
 
-## API Endpoints
+> ## API Endpoints
 
 ### POST /items
 
@@ -89,7 +89,7 @@ This endpoint allows adding a list of items. If the list is empty or null, or if
    - `400 Bad Request`: If the list is null or empty.
    - `409 Conflict`: If any item in the list has an existing ID in the database.
 
-## Example Usage
+> ## Example Usage
 
 ### 1. Adding new items successfully
 Using Postman, you can send a request like the following to add new items:
@@ -97,7 +97,7 @@ Using Postman, you can send a request like the following to add new items:
 ### 2. Handling item conflicts
 If you try to add an item with an existing ID, you will receive a conflict message:
 
-## Author
+> ## Author
 
 This project was developed by [Pedro Mayorga] as part of a technical test.
 
