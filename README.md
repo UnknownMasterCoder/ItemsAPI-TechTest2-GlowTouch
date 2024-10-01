@@ -7,21 +7,29 @@ This API has been developed as part of a technical test, focusing on handling PO
 ## Technologies Used
 
 - **Java**: 17
-- **Spring Boot**: 3.1.0
+- **Spring Boot**: 3.3.4
 - **Gradle**: Build tool
 - **Postman**: For testing API requests
 - **Lombok**: For cleaner code by auto-generating getters, setters, constructors, etc.
 
 ## Project Requirements
 
+Please create a Spring Boot REST controller with the following requirements:
+
+1. The controller should handle POST requests at the endpoint '/items'.
+2. It should accept a List of Items in the request body.
+3. If the List is null or empty, the controller should return a 400 Bad Request response.
+4. For each Item in the List, if the item’s ID is already present in the database, it should skip adding that item and return a 409 Conflict response for those items
+
 The following features were implemented to meet the requirements of the technical test:
 
-1. **POST `/items` Endpoint**: Accepts a list of items to add to the database.
-   - If the list is null or empty, the API returns a `400 Bad Request`.
-   - If an item's ID already exists in the database, the API skips that item and returns a `409 Conflict` response.
-   - Successfully added items return a `200 OK` response.
+1. **POST `/items` Endpoint**:
+   - ✅ Accepts a list of items to add to the database in the body.
+   - ✅ If the list is null or empty, the API returns a `400 Bad Request`.
+   - ✅ If an item's ID already exists in the database, the API skips that item and returns a `409 Conflict` response.
+   - ✅ Successfully added items return a `200 OK` response.
    
-2. **Database Simulation**: The API simulates a database using a `Set<Long>` to keep track of item IDs. This ensures that item IDs are unique, avoiding duplication.
+3. **Database Simulation**: The API simulates a database using a `Set<Long>` to keep track of item IDs. This ensures that item IDs are unique, avoiding duplication.
 
 ## Prerequisites
 
@@ -46,7 +54,37 @@ The following features were implemented to meet the requirements of the technica
 
 Here is a simple architecture overview of the API:
 
+![Architecture model](./docs/Arquitectura gral.drawio.png)
 
-- Controller: Handles the HTTP requests.
-- Service: Contains the business logic, such as filtering out duplicate items.
-- Database: Simulated in-memory storage using a Set<Long> to prevent duplicate IDs.
+- **Controller:** Handles the HTTP requests.
+- **Service:** Contains the business logic, such as filtering out duplicate items.
+- **Database:** Simulated in-memory storage using a Set<Long> to prevent duplicate IDs.
+
+## Architecture Overview
+
+Instead of using a real database, the API stores the item IDs in an in-memory set `(Set<Long>)`. Each time the `/items` endpoint is called, the service checks whether the item ID already exists in this set. If it does, that item is skipped, and a `409 Conflict` response is returned.
+
+## API Endpoints
+
+### POST /items
+
+This endpoint allows adding a list of items. If the list is empty or null, or if any item has an ID that already exists, appropriate error messages are returned.
+
+- **Request:** Accepts a JSON array of items in the following format:
+   ```json
+   [
+       {"id": 1, "name": "Item 1"},
+       {"id": 9, "name": "Item 9"},
+       {"id": 10, "name": "Item 10"},
+       {"id": 4, "name": "Item 4"},
+       {"id": 11, "name": "Item 11"},
+       {"id": 12, "name": "Item 12"},
+       {"id": 7, "name": "Item 7"},
+       {"id": 8, "name": "Item 8"}
+   ]
+
+- **Responses:**
+
+   - `200 OK`: Items added successfully.
+   - `400 Bad Request`: If the list is null or empty.
+   - `409 Conflict`: If any item in the list has an existing ID in the database.
