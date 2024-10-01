@@ -123,6 +123,6 @@ If you try to add items with existing IDs, you will receive a `409 - Conflict` r
 > ## Author
 
 This project was developed as part of a technical test by:
-- **PEDRO MAYORGA** _(UnknownMasterCoder)_ - _Initial work_
+- **PEDRO MAYORGA** (UnknownMasterCoder) - _Initial work_
 - [LinkedIn](https://linkedin.com/in/PedroMayorga)
 - [GitHub](https://github.com/UnknownMasterCoder)
