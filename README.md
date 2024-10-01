@@ -1,10 +1,10 @@
 # ItemsAPI-TechTest2-GlowTouch
 
-## Items Management API - Spring Boot Technical Test
+> ## Items Management API - Spring Boot Technical Test
 
 This API has been developed as part of a technical test, focusing on handling POST operations on a list of items in a DB. It includes validations such as handling null or empty inputs and avoiding duplicate item entries.
 
-## Technologies Used
+> ## Technologies Used
 
 - **Java**: 17
 - **Spring Boot**: 3.3.4
@@ -88,3 +88,18 @@ This endpoint allows adding a list of items. If the list is empty or null, or if
    - `200 OK`: Items added successfully.
    - `400 Bad Request`: If the list is null or empty.
    - `409 Conflict`: If any item in the list has an existing ID in the database.
+
+## Example Usage
+
+### 1. Adding new items successfully
+Using Postman, you can send a request like the following to add new items:
+
+### 2. Handling item conflicts
+If you try to add an item with an existing ID, you will receive a conflict message:
+
+## Author
+
+This project was developed by [Pedro Mayorga] as part of a technical test.
+
+- [Pedro Mayorga on LinkedIn](https://linkedin.com/in/PedroMayorga)
+- [UnknownMasterCoder on GitHub](https://github.com/UnknownMasterCoder)
