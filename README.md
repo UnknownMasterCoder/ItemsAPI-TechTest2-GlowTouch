@@ -25,9 +25,9 @@ The following features were implemented to meet the requirements of the technica
 
 1. **POST `/items` Endpoint**:
    - ✅ Accepts a list of items to add to the database in the body.
-   - ✅ If the list is null or empty, the API returns a `400 Bad Request`.
-   - ✅ If an item's ID already exists in the database, the API skips that item and returns a `409 Conflict` response.
-   - ✅ Successfully added items return a `200 OK` response.
+   - ✅ If the list is null or empty, the API returns a `400 - Bad Request`.
+   - ✅ If an item's ID already exists in the database, the API skips that item and returns a `409 - Conflict` response.
+   - ✅ Successfully added items return a `200 - OK` response.
    
 3. **Database Simulation**: The API simulates a database using a `Set<Long>` to keep track of item IDs. This ensures that item IDs are unique, avoiding duplication.
 
@@ -100,15 +100,25 @@ This endpoint allows adding a list of items. If the list is empty or null, or if
 
 > ## Example Usage
 
-### 1. Adding new items successfully
-Using Postman, you can send a request like the following to add new items:
+### Run the API endpoint
+Run the Spring Boot Application endpoint
+![Spring run](/docs/Execute_TechTest2.jpg "Spring run")
 
-### 2. Handling item conflicts
-If you try to add an item with an existing ID, you will receive a conflict message:
+### 1. Handling adding null items
+Using Postman, if you try to add null items, you will receive a `400 - Bad Request` response:
+![result 1](/docs/Result1_TechTest2.jpg "result 1")
+
+### 2. Adding new items successfully
+You can also send a request like the following to add new items, you will receive a `200 - OK` response:
+![result 2](/docs/Result2_TechTest2.jpg "result 2")
+
+### 3. Handling item conflicts
+If you try to add items with existing IDs, you will receive a `409 - Conflict` response:
+![result 3](/docs/Result3_TechTest2.jpg "result 3")
 
 > ## Author
 
 This project was developed as part of a technical test by:
-- `**PEDRO MAYORGA** - Initial work - UnknownMasterCoder`
+- **PEDRO MAYORGA** - Initial work - _UnknownMasterCoder_
 - [LinkedIn](https://linkedin.com/in/PedroMayorga)
 - [GitHub](https://github.com/UnknownMasterCoder)
