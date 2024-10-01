@@ -51,7 +51,6 @@ The following features were implemented to meet the requirements of the technica
 3. The API will be available at `http://localhost:8080/items`
 
 > ## Architecture Overview
-
 Here is a simple architecture overview of the API:
 
 ![Architecture model](/docs/ArchitectureModel.png "Architecture model")
@@ -59,6 +58,16 @@ Here is a simple architecture overview of the API:
 - **Controller:** Handles the HTTP requests.
 - **Service:** Contains the business logic, such as filtering out duplicate items.
 - **Database:** Simulated in-memory storage using a Set<Long> to prevent duplicate IDs.
+
+> ## Project Structure
+Here is the files structure of the project in IntelliJ IDEA:
+
+![Files Structure](/docs/Files_TechTest2.jpg "Files Structure")
+
+- **ItemController:** Handles the HTTP requests.
+- **ItemService:** Contains the business logic, such as filtering out duplicate items.
+- **Item:** Contains the entity class for the model view.
+- **ItemsApplication:** Main class that runs the application.
 
 > ## Database Implementation
 
@@ -99,7 +108,7 @@ If you try to add an item with an existing ID, you will receive a conflict messa
 
 > ## Author
 
-This project was developed by [Pedro Mayorga] as part of a technical test.
-
-- [Pedro Mayorga on LinkedIn](https://linkedin.com/in/PedroMayorga)
-- [UnknownMasterCoder on GitHub](https://github.com/UnknownMasterCoder)
+This project was developed as part of a technical test by:
+- `**PEDRO MAYORGA** - Initial work - UnknownMasterCoder`
+- [LinkedIn](https://linkedin.com/in/PedroMayorga)
+- [GitHub](https://github.com/UnknownMasterCoder)
